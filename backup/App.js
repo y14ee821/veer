@@ -1,6 +1,4 @@
 import { StatusBar } from "expo-status-bar";
-import "@/global.css";
-import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
 import { Text, View } from "react-native";
 import { ErrorComponent } from "./src/components";
 import { Routes } from "./src/routes/Routes";
@@ -20,7 +18,9 @@ export default function App() {
   return (
     <>
       <Provider store={store}>
+        
           <Routes />
+        
       </Provider>
     </>
   );
