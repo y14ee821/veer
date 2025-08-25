@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Platform } from 'react-native';
 import { View, ScrollView, TouchableOpacity, Text, StyleSheet } from "react-native";
 
 export const HorizontalScroller = ({ children, itemWidth = 120, style }) => {
@@ -16,12 +17,14 @@ export const HorizontalScroller = ({ children, itemWidth = 120, style }) => {
 
   return (
     <View style={[styles.container, style]}>
-      <TouchableOpacity
+      {Platform.OS === 'web' && <TouchableOpacity
         style={styles.arrowLeft}
         onPress={() => scrollBy(currentOffset - itemWidth * 2)}
       >
         <Text style={styles.arrowText}>{"‹"}</Text>
-      </TouchableOpacity>
+      </TouchableOpacity>}
+
+
       <ScrollView
         ref={scrollRef}
         horizontal
@@ -32,12 +35,13 @@ export const HorizontalScroller = ({ children, itemWidth = 120, style }) => {
       >
         {children}
       </ScrollView>
-      <TouchableOpacity
+      {Platform.OS === 'web' && <TouchableOpacity
         style={styles.arrowRight}
         onPress={() => scrollBy(currentOffset + itemWidth * 2)}
       >
         <Text style={styles.arrowText}>{"›"}</Text>
       </TouchableOpacity>
+      }
     </View>
   );
 };

@@ -8,6 +8,8 @@ import {
   TextInput,
   StyleSheet,
 } from "react-native";
+
+
 import { HorizontalScroller } from "../components/utils/HorizontalScroller";
 
 import React, { useLayoutEffect, useState } from "react";
@@ -92,8 +94,9 @@ export const HomeScreen = () => {
 
     <ScrollView style={styles.container}>
       {/* Header */}
-      <View style={styles.header}>
-        <Image source={{ uri: "https://upload.wikimedia.org/wikipedia/commons/0/05/Flipkart_logo.png" }} style={styles.logo} />
+      <View style={styles.header} className="flex">
+        {/* <Image source={{ uri: "https://upload.wikimedia.org/wikipedia/commons/0/05/Flipkart_logo.png" }} style={styles.logo} /> */}
+        <Text className="text-white font-bold p-2 mr-1 bg-green-400 rounded-lg">Veer</Text>
         <TextInput
           style={styles.search}
           placeholder="Search for products, brands and more"
@@ -183,7 +186,7 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
     elevation: 1,
   },
-  container: { backgroundColor: "#f6f7fb", flex: 1 },
+  container: { backgroundColor: "#f6f7fb", flex: 1, marginVertical:30 },
   header: {
     flexDirection: "row",
     alignItems: "center",

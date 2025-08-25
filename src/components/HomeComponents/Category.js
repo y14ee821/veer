@@ -34,6 +34,8 @@ export const Category = ({ categories }) => {
             backgroundColor: "#fff",
             borderRadius: 18,
             marginRight: 10,
+            marginBottom: 10,
+            marginTop: 10,
             alignItems: "center",
             justifyContent: "center",
             shadowColor: "#000",
